@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Customs World</title>
+  <!-- Bootstrap Core CSS -->
+  <script src="/js/jquery-3.1.1.min.js"></script>
+<script src="/js/jquery.validate.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<link href = "/css/bootstrap.min.css" rel = "stylesheet">
+<script src="/js/customs_customsFunctions.js"></script>
+<script src="/js/common-functions.js"></script>  <script>
+  var pairs = location.search.substring(1).split( "&" );
+  var name = "techmahindra@org";
+  for ( var p = 0; p < pairs.length; ++p )
+  {
+      var pair = pairs[p].split("=");
+      if ( pair[0] == "user" ) name = unescape( pair[1].replace(/\+/g," ") );
+  }
+  </script>
+<style>
+.header
+{
+/*background-color:#1f89de;*/
+}
+.navbar-inverse {
+     background-color: #c6542f;
+     border-color: #c6542f; 
+     }
+     
+  h5{
+      color: #fff;
+  }
+  .navbar-inverse .navbar-nav>li>a {
+    color: #fff;
+}
+.navbar-nav {
+    float: none;
+    margin-left:30%;
+}
+.navbar-brand{
+margin-left: -27px;
+}
+
+ body
+{
+background-color:#ececec;;
+} 
+.bckg
+{
+ /*position:absolute;*/ 
+ background-color:#f0ebeb; 
+ z-index:1001;
+ min-width: 100%;
+ 
+}
+
+.btn-md, .btn-group-md > .btn {
+   
+    height:30px;
+    border-radius: 10em;
+    width:30%;
+    font-family: 'Source Sans Pro', sans-serif; 
+    font-size:15px; 
+    font-weight:bold;  
+    cursor:pointer;
+    background-color: #13ce62;
+}
+.border_bottom1{
+padding-top: 4px;
+border-bottom:1pt solid rgba(128,128,128,0.20);
+
+}
+.container
+{
+padding-bottom: 0px;
+margin: 8px auto 0px auto;
+width: 82%;
+max-width: 82%;
+background-color:#fff; 
+background-attachment: fixed;
+background-position: center; 
+ box-shadow:0px 0px 2px 4px #e4e4e4;
+ -webkit-box-shadow:0px 0px 2px 4px #e4e4e4;
+ -moz-box-shadow:0px 0px 2px 4px #e4e4e4;
+     padding: 37px !important;
+     z-index:2;
+}
+.pageHead{
+	width:100%;
+	height:60px;
+	background:#FFF;
+	font-size:12px;
+ box-shadow:0px 2px #dedede;
+ -webkit-box-shadow:0px 2px #dedede;
+ -moz-box-shadow:0px 2px #dedede;
+/* font-weight:bold; */
+
+}
+.orderIcon{
+    position: absolute;
+    top: 25px;
+    z-index: 0;
+    width: 10%;
+    right: 12%;
+}
+.table-align{
+     font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;  
+     font-size: 15px; 
+     padding-left:10px;
+     width: 90%; 
+     margin: 20px; 
+     border-collapse: separate;
+      border-spacing: 10px; 
+}
+.table{
+     font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;  
+     font-size: 15px; 
+     /* padding-left:10px; */
+     width: 90%; 
+    /*  margin: 20px;  */
+     border-collapse: separate;
+      border-spacing: 20px; 
+}
+th, td { padding: 5px; }
+th ,td{
+    text-align: left;
+   /*  padding-left: 20px;
+    border-collapse: separate;
+      border-spacing: 10px;  */
+}
+
+.style_prevu_kit:hover
+{
+    box-shadow: 0px 0px 100px #D3D3D3;
+    z-index: 2;
+    -webkit-transition: all 100ms ease-in;
+    -webkit-transform: scale(1.01);
+   /*  -ms-transition: all 100ms ease-in;
+    -ms-transform: scale(1.01);   
+    -moz-transition: all 100ms ease-in;
+    -moz-transform: scale(1.05); */
+    transition: all 100ms ease-in;
+    transform: scale(1.01);
+	background-color: #ffffff;
+	font-family: Open Sans Regular;
+	font-size: 16px;
+	font-color: #505050;
+}
+tr.border_bottom td {
+padding-top: 4px;
+border-bottom: 1pt solid rgba(128, 128, 128, 0.20);
+
+}
+
+tr.border_bottom1 td {
+padding-top: 4px;
+border-bottom:1pt solid rgba(128,128,128,0.20);
+
+}
+td 
+{
+text-align: center; 
+}
+tr > td
+{
+  padding-bottom: 1em;
+}
+
+/*table form */
+#gradient-style {
+     /* font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;  */
+     font-size: 12px; 
+     width: 480px; 
+     text-align: center; 
+     border-collapse: collapse; 
+     /*margin: 20px; */
+     border-collapse: collapse;
+     border-spacing: 0;
+}
+th {
+    font-size: 13px;
+    font-weight: bold;
+    background: #13ce62;
+    border-top: 2px solid #d3ddff;
+    border-bottom: 1px solid #fff;
+    color: white;
+    padding: 8px;
+	text-align: center; 
+}
+
+tr
+{
+  border-bottom: 1px solid #fff;
+}
+</style>
+
+</head>
+<body onload="onLoadCall()">
+
+<div class="bckg">
+<nav class="navbar navbar-inverse" style="max-height: 60px;margin-bottom:0px;    border-radius: 0px !important;">
+  <div class="container-fluid" style="width:100%;height:30%;color:white;">
+    <div class="navbar-header" style="width:20%;float:left;">
+       <img class="navbar-brand"  src="./images/Customs/header_logo.png" class="img-responsive" style="width:40%; height:30%;margin-top: -5.5%; ">  
+       <b class="header" style="padding-left: 0em;float:left;margin-top: 8.5%;">Customs World</b>           
+    </div>       
+    <div class="heading header" style="width:62%;height:26px;float:left;margin-top: 1.5%;padding-top: 1%;">
+		
+	</div>
+
+	<div class="emailid header" style="width:11%;height:26px;float:left;margin-top: 0.5%;padding-top: 1%;">Stephen@ymg.com
+		<!-- <script type="text/javascript">document.write(name);</script>
+ -->	</div>
+
+	<div class="logout header pull-right" style="width:5%;height:26px;float:left;margin-top: 0.5%;padding-top: 1%;">
+	<a style="color: white;" href="customs-login.html"><span class="glyphicon glyphicon-log-out"></span> Logout</a>				
+	</div>
+   
+  </div>
+</nav>
+
+<div class="pageHead" style="padding-bottom:3%;background-color: white;padding-top: 1%;">
+	<div style="float: left;margin-left: 2%; margin-top: 0.5em; "><b>Select Customer Account</b></div>
+	<select class="selectpicker" id="selectpicker" onchange="showAllPODetails();" 
+		style="border-top-left-radius:10em;border-bottom-left-radius:10em;background: rgba(128,128,128,0.20);border-top-right-radius:10em;border-bottom-right-radius:10em;
+		width:12%;margin-left: 2%;height: 32px;float: left;">
+  			<option value="select">--select--</option>
+  			<option value="Nestle">Blueheart Beans</option>
+	</select>
+	
+</div>
+<div style="background-color: white;margin-top: -1.5%;">
+
+<div id="date_set" style="margin-left: 80%;margin-top: -3.5%;font-size:15px"></div>
+</div>
+
+<center>
+<div class="col-sm-12" id ="det" style="overflow-x: visible;">
+
+</div>	
+</div>
+<br/><br/><br/><br/>
+<!-- <div class="container" style="padding-top:1em;width:70%;height: -1em;">	
+<div class="container">-->
+	<div style="float:left;width:100%;">
+		<div class="item" style="position: relative;">		
+			 <center>
+			 <br/></br>
+				<span><button type="button" id="btn_billOfLading" class="btn btn-success btn-md" onclick="openpdfBOL();">View Bill of Lading </button></span>
+				<span><button type="button" id="btn_POE" class="btn btn-success btn-md" >Generate POE Clearance</button></span>
+			</center> 
+		</div>	
+	</div>										
+<!--</div>   container division ends here -->
+</center>
+<!-- </div>  --><!--  container division ends here -->
+
+</body>
+
+</html>

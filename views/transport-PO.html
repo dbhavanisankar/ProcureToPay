@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Transport PO Form </title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="/js/jquery-3.1.1.min.js"></script>
+<script src="/js/jquery.validate.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<link href = "/css/bootstrap.min.css" rel = "stylesheet">
+
+<script src="/js/common-functions.js"></script>
+<script src="/js/transport_customsFunctions.js"></script>
+
+</head>
+
+<style>
+body
+{
+	 background-color: #f0ebeb;
+}
+.header
+{
+ height:26px;
+ float:left;
+ margin-top: 1.5%;
+ font-family: Open Sans Semibold; 
+ font-size: 15px;
+}
+tr > td
+{
+  padding-bottom: 1em;
+}
+
+/*table form */
+#gradient-style {
+     /* font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;  */
+     font-size: 12px; 
+     width: 480px; 
+     text-align: center; 
+     border-collapse: collapse; 
+     /*margin: 20px; */
+     border-collapse: collapse;
+     border-spacing: 0;
+}
+th {
+    font-size: 13px;
+    font-weight: bold;
+    background: #13ce62;
+    border-top: 2px solid #d3ddff;
+    border-bottom: 1px solid #fff;
+    color: white;
+    padding: 8px;
+	text-align: center; 
+}
+
+tr
+{
+  border-bottom: 1px solid #fff;
+}
+
+.bck
+{
+background: rgba(128,128,128,0.20);
+}
+
+tr.border_bottom td {
+padding-top: 4px;
+border-bottom: 1pt solid rgba(128, 128, 128, 0.20);
+
+}
+
+tr.border_bottom1 td {
+padding-top: 4px;
+border-bottom:1pt solid rgba(128,128,128,0.20);
+
+}
+td 
+{
+text-align: center; 
+}
+.navbar-inverse {
+     background-color: #3c414d;
+     /*border-color: #1f89de;*/ 
+     }
+     
+  h5{
+      color: #fff;
+  }
+  .navbar-inverse .navbar-nav>li>a {
+    color: #fff;
+}
+.navbar-nav {
+    float: none;
+    margin-left:30%;
+}
+.style_prevu_kit:hover
+{
+    box-shadow: 0px 0px 100px #D3D3D3;
+    z-index: 2;
+    -webkit-transition: all 100ms ease-in;
+    -webkit-transform: scale(1.01);
+   /*  -ms-transition: all 100ms ease-in;
+    -ms-transform: scale(1.01);   
+    -moz-transition: all 100ms ease-in;
+    -moz-transform: scale(1.05); */
+    transition: all 100ms ease-in;
+    transform: scale(1.01);
+	background-color: #ffffff;
+	font-family: Open Sans Regular;
+	font-size: 16px;
+	font-color: #505050;
+}
+.bottomLine
+{
+	border-bottom: 1px solid grey;
+}
+</style>
+
+<body onload="onLoadCall()">
+
+<nav class="navbar navbar-inverse" style="max-height: 68px; border-radius: 0px;">
+  <div class="container-fluid" style="width:100%;height:30%;color:white;">
+  <div>
+    <span class="navbar-header" style="width:9%;float:left;">
+      <img class="navbar-brand" src="./images/Transport/header_logo.png" class="img-responsive" style="width:55%; height:30%"> 
+       <b class="header" style="margin-top: -36.5%;margin-left: 5em; width:110%">Highland Transport</b> 
+    </span>
+    
+   <span class="heading header" style="width:73%;">
+		
+	</span>
+	</div>
+	<div>
+	<span class="emailid header" style="width:9%;">
+		<!-- <script type="text/javascript">document.write(name);</script>-->
+		Roghan@trans.in 
+	</span>
+
+	<!-- <div class="logout header" style="width:10%;">
+	<a style="color: white;" href="#"><span><img src="./images/NestleFinance/logout.png"></span></a>-->
+	<span class="logout header pull-right" style="width:6%;height:26px;float:left;margin-top: 1.5%;">
+	<a style="color: white;" href="transport-login.html"><span class="glyphicon glyphicon-log-out"></span> Logout</a>				
+	</span>
+   </div>
+  </div>
+</nav>
+
+<div style="padding-bottom:1%;background-color: white;padding-top: 2%;margin-top:-2%;">
+<div style="float: left;margin-left: 7%;    padding-top: 5px;"><b>Select Customer Account</b></div>
+<select class="selectpicker" id="selectpicker" onchange="showAllPODetails();" 
+style="border-top-left-radius:10em;border-bottom-left-radius:10em;background: rgba(128,128,128,0.20);border-top-right-radius:10em;border-bottom-right-radius:10em;
+width:12%;margin-left: 2%;height: 32px;float: left;">
+  <option value="select">--select--</option>
+  <option value="Nestle">Blueheart Beans</option>
+</select>
+<div id="date_set" style="margin-left: 80%;"></div>
+</div>
+
+<!--  <div style="height: 1%;background-color: grey;width: 100%;float: left;position: absolute;"></div>-->
+<br/>
+<br/>
+<center>
+<div id="det" style="background-color:white;width: 70%;">
+
+</div>
+
+<br/>
+<br/>
+<button type="button" id="btn_BOL" class="btn btn-success btn-md" >Generate Bill of Lading &nbsp;&nbsp;&nbsp;&nbsp;
+<span class="fa fa-arrow-right"></span></button>
+</center> 
+
+</body>
+
+<script>
+/*function showDetails()
+{
+	document.getElementById("det").innerHTML="";
+	var val=document.getElementById("selectpicker").value;
+	if(val=="Nestle")
+		{
+		var temp;
+		//temp='<center><table class = "table table-list-search" style="width:70%;"><tr align="left" style="background-color: #ffffff;"><th>P.Order.No</th><th>Amount</th><th>Supplier Name</th><th>Supplier Bank</th></tr><tr><td><a onclick="showPdf();">201345</a></td><td>$ 5678</td><td>BlueHeart Beans</td><td>Bank Of Asia</td></tr></table></center>';
+		temp=' <b style="padding-top:1em;">Invoices List</b> <br/> <center><table class = "table table-list-search" style="width:70%;"><thead><tr align="left" style="background-color: #ffffff;"><th>Invoice No.</th><th>Cost Of Goods</th><th>Date</th><th>Quantity</th><th>Status</th></tr></thead><tbody><tr align="left" class="style_prevu_kit" style="background-color: #ffffff;"><td style="text-color:#3973bf;"><a href="showPdf();">684940</a></td><td>Coffee Beans</td><td>13/02/2017</td><td>20,000 kg</td><td>Not send <img src="./images/Not_send.png"/></td></tr></tbody></table></center>';
+		document.getElementById("det").innerHTML=temp;
+		
+		}
+	
+}
+
+function openpdf()
+{			 
+	window.open('BillOfLading.pdf','_blank');	
+
+}
+
+function showPdf()
+{
+	document.getElementById("pdf_div").innerHTML="";
+
+	var temp;
+	temp='<object style="margin-left: 110px;" type="application/pdf" width="1100" height="800" data="BillOfLanding.pdf"></object>';
+	document.getElementById("pdf_div").innerHTML=temp;
+}*/
+</script>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Nestle Login Form </title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="/js/jquery-3.1.1.min.js"></script>
+<script src="/js/jquery.validate.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<link href = "/css/bootstrap.min.css" rel = "stylesheet">
+<link href = "/css/style.css" rel = "stylesheet">
+<script src="/js/common-functions.js"></script>
+
+ <style>
+	body
+	{
+		background-image: url(./images/NestleFinance/nestle_finance_background.png);
+	}
+ </style>
+  <script>
+  function LoginPage()
+ {
+	 	// alert("Welcomee Nestley PurchaseOrder html page");
+	     window.location="buyer-NestleFP.html"; 
+	     return false;
+ }
+</script>
+</head>
+<body>
+<div class="container-fluid">
+<div class="row">
+<div class="col-sm-12">
+<div class="col-sm-6">
+<h1 class="headerProp">Nestle</h1>		
+<center><img class="img img-rounded"src="./images/NestleFinance/nestle_finance_logo.png"></center>
+</div>
+<div class="col-sm-6 ">
+<div class="col-md-offset-2 col-md-6">
+<div class="panel panel-custom">
+  <div class="panel-body">  
+  <img class="loginimg center-block rounded-top rounded-circle img-responsive" src="./images/NestleFinance/nestle_finance_icon.png"  width="20%">
+			<h4 style="text-align: center;">Nestle Login</h4>
+					<img class="line" src="./images/Line.png"  width="30%">
+					<br>  
+ <form>
+  <div class="form-group">
+	<div class="input-group">
+		<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+		<input id="email" type="email" class="icon input-md form-control" required placeholder="Email"> 
+	</div>
+  </div>
+  <div class="form-group">
+	<div class="input-group">
+		<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+		<input id="pwd" type="password" class="icon input-md form-control" required placeholder="Password">
+	</div>
+  </div>
+  <br>
+<button type="submit" class="btn btn-success btn-md" onclick="return nestle_login()">LOGIN &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="fa fa-arrow-right"></span></button>
+</form>
+  <br>
+  <a href=""><h5 class="forgotLink"><b>Forgot your UserId or Password?</b></h5></a>
+  </div>
+  </div>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+</body>
+</html>

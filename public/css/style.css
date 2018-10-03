@@ -1,0 +1,116 @@
+@import url("http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css");
+@import url("http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700");
+*{
+	margin:0; 
+	padding:0
+}
+ body
+{
+/*background:url('../images/Background.png') no-repeat center center fixed; */
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+font-family: 'Source Sans Pro', sans-serif;
+}  
+.container-fluid {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.header
+{
+height:44px; 
+background:#fff
+}
+.headerProp
+{
+	text-align:left; 
+	color:#FFFFFF; 
+	font-family: 'Source Sans Pro', sans-serif;
+}
+.header h2
+{
+height: 22px; 
+line-height:44px; 
+color:#fff; 
+text-align:center
+}
+.login
+{
+	padding:0 20px
+}
+
+ul li{height:40px; margin:15px 0; list-style:none}
+.span{display:table; width:100%; font-size:14px;}
+.ch{display:inline-block; width:50%; color:#294072}
+.ch a{color:#294072; text-decoration:none}
+
+@media(max-width:480px){ .form{width:100%}}
+#division{
+margin-top: 4%;
+    height: 70%;
+   
+}
+.img{
+	 margin-top: 20%;
+    /*margin-left: 30%; */
+    width: 27%;
+}
+.loginimg
+{
+	margin-top:5%;
+	
+}
+h2{height:44px; line-height:44px; color:#999; text-align:center}
+.line{
+	margin-left: 18%;
+    width: 65%; 
+	margin-top: -10%;
+}
+.icon{
+	
+    padding-left: 30px;
+    width: 90%;
+	height:80%;
+    border-radius: 10em;
+    font-family: 'Source Sans Pro', sans-serif;
+    }
+.panel {
+   margin-top: 40%;
+  
+}
+.input-group-addon {
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1;
+    color: #555;
+    text-align: center;
+    background-color: white;
+    border: 1px solid #CCC;
+    border-radius: 20px;
+}
+.btn-md, .btn-group-md > .btn {
+   
+    border-radius: 20px;
+    width: 100%;
+	font-size: 15px;
+	background-color:#13ce62;
+}
+.forgotLink 
+{
+	text-align: center; 
+	font-family: 'Sans Semibold';
+}
+.Un-Icon
+{
+background: url('../images/Select_Email_Icon1.png') 7px no-repeat;
+    padding-left: 20%;
+}
+.Pw-Icon
+{
+	background: url('../images/Paasword_Icon.png') 7px no-repeat;
+    padding-left: 20%;	
+}

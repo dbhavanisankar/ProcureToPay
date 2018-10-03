@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Supplier A PO Form</title>
+<script src="/js/jquery-3.1.1.min.js"></script>
+<script src="/js/jquery.validate.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<link href = "/css/bootstrap.min.css" rel = "stylesheet">
+<!-- <script src="/js/supplier-search.js"></script> -->
+<script src="/js/supplier_customsFunctions.js"></script>
+<style>
+.navbar-inverse {
+     background-color: #774a26;
+     }
+  .navbar-inverse .navbar-nav>li>a {
+    color: #fff;
+}
+.navbar-nav {
+    float: none;
+    margin-left:30%;
+}
+.btn-md, .btn-group-md > .btn {
+   
+    height:40px;
+    border-radius: 10em;
+    width:20%;
+    font-family: 'Source Sans Pro', sans-serif; 
+    font-size:15px; 
+    font-weight:bold;  
+    cursor:pointer;
+    background-color: #13ce62;
+}
+.header
+{
+ height:26px;
+ float:left;
+ margin-top: 1.5%;
+ font-family: Open Sans Semibold; 
+ font-size: 16px;
+}
+.navbar
+{
+ margin-bottom: 0px; 
+}
+.style_prevu_kit:hover
+{
+    box-shadow: 0px 0px 100px #D3D3D3;
+    z-index: 2;
+    -webkit-transition: all 100ms ease-in;
+    -webkit-transform: scale(1.01);
+   /*  -ms-transition: all 100ms ease-in;
+    -ms-transform: scale(1.01);   
+    -moz-transition: all 100ms ease-in;
+    -moz-transform: scale(1.05); */
+    transition: all 100ms ease-in;
+    transform: scale(1.01);
+	background-color: #ffffff;
+	font-family: Open Sans Regular;
+	font-size: 16px;
+	font-color: #505050;
+}
+tr.border_bottom td {
+padding-top: 4px;
+border-bottom: 1pt solid rgba(128, 128, 128, 0.20);
+
+}
+
+tr.border_bottom1 td {
+padding-top: 4px;
+border-bottom:1pt solid rgba(128,128,128,0.20);
+
+}
+td 
+{
+text-align: center; 
+}
+tr > td
+{
+  padding-bottom: 1em;
+}
+
+/*table form */
+#gradient-style {
+     /* font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;  */
+     font-size: 12px; 
+     width: 480px; 
+     text-align: center; 
+     border-collapse: collapse; 
+     /*margin: 20px; */
+     border-collapse: collapse;
+     border-spacing: 0;
+}
+th {
+    font-size: 13px;
+    font-weight: bold;
+    background: #13ce62;
+    border-top: 2px solid #d3ddff;
+    border-bottom: 1px solid #fff;
+    color: white;
+    padding: 8px;
+	text-align: center; 
+}
+
+tr
+{
+  border-bottom: 1px solid #fff;
+}
+.pageHead{
+width:100%;
+height:60px;
+background:#FFF;
+font-size:18px;
+ box-shadow:0px 2px #dedede;
+ -webkit-box-shadow:0px 2px #dedede;
+ -moz-box-shadow:0px 2px #dedede;
+/* font-weight:bold; */
+
+}
+</style>
+</head>
+
+
+
+<body style="background-color:#ececec;" onload="setDate()">
+
+ <nav class="navbar navbar-inverse" style="max-height: 60px; border-radius: 0px;">
+  <div class="container-fluid" style="width:100%;height:30%;color:white;">
+  <div>
+    <span class="navbar-header" style="width:20%;float:left;">
+      <img class="navbar-brand" src="./images/Supplier/Header_logo.png" class="img-responsive" style="width:25%;padding-left: 0em; height:10%"> 
+       <b class="header" >BlueHeart Beans</b> 
+    </span>
+    
+   <span class="heading header" style="width:61%;">
+		
+	</span>
+	</div>
+	<div>
+	<span class="emailid header" style="width:13%;">
+		Frank@supplier.in
+	</span>
+	
+	<span class="logout header pull-right" style="width:6%;height:26px;float:left;margin-top: 1.5%;">
+	<a style="color: white;" href="supplier-login.html"><span class="glyphicon glyphicon-log-out"></span> Logout</a>				
+	</span>
+   </div>
+  </div>
+</nav>
+<div style="padding-bottom:2%;background-color: white;padding-top: 1%;">
+<div style="float: left;margin-left: 15%;"><b>Select Customer Account</b></div>
+<select class="selectpicker" id="selectpicker" onchange="showAllPODetails();" 
+style="border-top-left-radius:10em;border-bottom-left-radius:10em;background: rgba(128,128,128,0.20);border-top-right-radius:10em;border-bottom-right-radius:10em;
+width:12%;margin-left: 2%;height: 32px;float: left;">
+  <option value="select">select</option>
+  <option value="Nestle">Buyer</option>
+</select>
+<div id="date_set" style="margin-left: 80%;font-size:15px"></div>
+</div>
+<br/>
+<center>
+<!--  <div style="height: 1%;background-color: grey;width: 100%;float: left;position: absolute;"></div>-->
+<div id="det" style="background-color:white;width: 70%;">
+
+</div>
+
+<br/><br/>
+<div class="container" style="padding-top:5px;">	
+	<div style="padding-bottom:20px;float:left;width:100%;">
+		<div class="item" style="position: relative;">		
+			 <center>
+				<span><button type="button" id="btn_billOfLading" class="btn btn-success btn-md" onclick="openpdfBOL();"> View Bill of Lading &nbsp;&nbsp;&nbsp;&nbsp;</button></span>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<span><button type="button" id="btn_poeClearance" class="btn btn-success btn-md" onclick="openpdfPOE();"> View Port of Entry Clearance &nbsp;&nbsp;&nbsp;&nbsp;</button></span>
+				    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<span><button type="button" id="btn_genInvoice" class="btn btn-success btn-md" onclick="openpdfInvoice();">Generate Invoice &nbsp;&nbsp;&nbsp;&nbsp;</button></span>
+		
+			</center> 
+		</div>	
+	</div>										
+</div> <!--  container division ends here -->
+</center>
+</body>
+
+
+</html>

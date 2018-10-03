@@ -1,0 +1,123 @@
+1. CreatePurchaseOrder
+
+{
+"header" : {
+    "event_const" : "CNST_PURCHASE_ORDER",
+    "head_id" : 123
+},
+"jsonblob" : {
+            "po_id":"PO_001",
+            "supplier_id":"8888",
+            "qty":"20",
+            "price_unit":"200",
+            "item_details":"coffee bean",
+            "item_id":"IT_001_SP_001",
+            "date":"11/05/2018",
+            "status":"Item not received"
+         }
+}
+
+2.GetPurchaseOrder
+http://localhost:3000/query/GetPurchaseOrder/PO_001
+
+3. GetAllPurchaseOrders
+http://localhost:3000/query/GetAllPurchaseOrders   (need  ro check)
+
+4. GetItemForSupplier
+http://localhost:3000/query/GetItemForSupplier/8888
+
+5. CreateItems
+
+{
+"header" : {
+    "event_const" : "CNST_CREATEITEMS",
+    "head_id" : 123
+},
+"jsonblob" : {
+            "key":"Key_001",
+            "supplier_id":"8888",
+            "item_id":"IT_001_SP_001",
+            "item":"coffee bean",
+            "quantity":"50",
+            "price_unit":"500"
+         }
+}
+
+
+6. UpdateItemForSupplier
+
+{
+"header" : {
+    "event_const" : "CNST_UPDATE_ITEMFOR_SUPPLIER",
+    "head_id" : 123
+},
+"jsonblob" : {
+            "supplier_id":"8888",
+            "item_id":"IT_001_SP_001",
+            "item":"coffee bean",
+            "quantity":"50",
+            "price_unit":"700"
+         }
+}
+
+7. UpdateBillOfLading
+
+{
+"header" : {
+    "event_const" : "CNST_UPDATE_BILLOFLADING",
+    "head_id" : 123
+},
+"jsonblob" : {
+            "po_id":"PO_001",
+            "billOflading":"Bill Of Lading Successful"
+             }
+}
+
+8.UpdatePoECustoms
+
+{
+"header" : {
+    "event_const" : "CNST_UPDATE_POE_CUSTOMS",
+    "head_id" : 123
+},
+"jsonblob" : {
+            "po_id":"PO_001",
+            "poe_Customs":"POE Customs Successful"
+             }
+}
+
+
+9. UpdateInvoice
+{
+"header" : {
+    "event_const" : "CNST_UPDATE_INVOICE",
+    "head_id" : 123
+},
+"jsonblob" : {
+            "po_id":"PO_001",
+	     "status":"sent",
+            "invoice":"Invoice Successful"
+             }
+}
+
+
+
+links:
+
+http://localhost:3000/buyer-login.html
+user name :techmahindra@org.in
+pwd:123
+
+
+
+http://localhost:3000/supplier-login.html
+user name:Frank@supplier.in
+pwd:123
+
+http://localhost:3000/transport-login.html
+user name:Roghan@trans.in
+pwd :123
+
+http://localhost:3000/customs-login.html
+username:Stephen@ymg.com
+pwd:123

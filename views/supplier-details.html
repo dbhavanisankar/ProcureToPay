@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Supplier A Form </title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="/js/jquery-3.1.1.min.js"></script>
+<script src="/js/jquery.validate.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<link href = "/css/bootstrap.min.css" rel = "stylesheet">
+<script src="/js/search.js"></script>
+<script src="/js/supplier_customsFunctions.js"></script>
+<script src="/js/common-functions.js"></script>
+<style>
+
+body
+{
+ background-color: #f0ebeb;
+}
+.header
+{
+ height:26px;
+ float:left;
+ margin-top: 1.5%;
+ font-family: Open Sans Semibold; 
+ font-size: 16px;
+}
+tr > td
+{
+  padding-bottom: 1em;
+  border: noborder;
+}
+
+/*table form */
+#gradient-style {
+     
+     font-size: 12px; 
+     width: 480px; 
+     text-align: center; 
+     border-spacing: 0;
+}
+tr
+{
+  /*border-bottom: 1px solid #fff;*/
+}
+
+.bck
+{
+ background: rgba(128,128,128,0.20);
+}
+
+td 
+{
+text-align: left; 
+padding-top:1em;
+padding-left: 1em;
+}
+.navbar-inverse {
+     background-color: #774a26;
+     border-color: #774a26; 
+     }
+     
+  h5{
+      color: #774a26;
+      font-size: 25px; 
+  }
+  .navbar-inverse .navbar-nav>li>a {
+    color: #fff;
+}
+.navbar-nav {
+    float: none;
+    margin-left:30%;
+}
+
+.bottomLine
+{
+	/*border-bottom: 1px solid grey;*/
+}
+</style>
+</head>
+<body onload="showSupplierDetails()">
+
+ <nav class="navbar navbar-inverse" style="max-height: 60px; border-radius: 0px;">
+  <div class="container-fluid" style="width:100%;height:30%;color:white;padding-left: 0em;">
+  <div>
+    <span class="navbar-header" style="width:20%;float:left;">
+      <img class="navbar-brand" src="./images/Supplier/Header_logo.png" class="img-responsive" style="width:25%;padding-left: 0em; height:10%"> 
+       <b class="header" style="width:60% ; margin-top: 6.5%;">BlueHeart Beans</b> 
+    </span>
+    
+   <span class="heading header" style="width:61%;">
+		
+	</span>
+	</div>
+	<div>
+	<span class="emailid header" style="width:13%;">
+		Frank@supplier.in
+	</span>
+
+	<!-- <div class="logout header" style="width:10%;">
+	<a style="color: white;" href="#"><span><img src="./images/NestleFinance/logout.png"></span></a>-->
+	<span class="logout header pull-right" style="width:6%;height:26px;float:left;margin-top: 1.5%;">
+	<a style="color: white;" href="supplier-login.html"><span class="glyphicon glyphicon-log-out"></span> Logout</a>				
+	</span>
+   </div>
+  </div>
+</nav>
+<br/>
+<br/>
+<div style="float:right;margin-top: -1.5%; margin-right: 12.5%;">
+<a href="supplier-po.html" style="color:#774a26; font-size: 17px ">Purchase Order List</a>
+</div>
+<center>
+<form>
+<div>
+
+</div>
+<div class="table-responsive" style="overflow-x: visible;">
+<h5> Supplier A</h5>
+<table  style="width:40%; border:medium outset #774a26;">
+		<tr style="background-color: #ffffff;">
+			<td>Item </td>
+			<td><input id="item" type="text" disabled/></td>
+			<td></td>
+		</tr>
+		<tr style="background-color: #ffffff;">
+			<td>Current Price </td>
+			<td><input id="cur_rate" type="text" disabled/> /kg</td>
+			<td></td>
+		</tr>
+		 <tr style="background-color: #ffffff;">
+			<td>Revised Price </td>
+			<td><input id="rev_rate" type="text"/> /kg</td>
+			<td><button type="submit" id="btnRPOk" class="btn btn-success btn-md" onclick="return revisedPriceUpd()">OK </button></td>
+		</tr>
+		<tr style="background-color: #ffffff;">
+			<td>Quantity </td>
+			<td><input id="qty" type="text" disabled /> </td>
+			<td></td>
+		</tr>
+		
+</table>
+<br/><br/><br/>
+
+</div>
+</form> 
+</center>
+
+
+
+
+</body>
+</html>
